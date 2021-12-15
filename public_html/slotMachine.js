@@ -1,8 +1,7 @@
 
-var cash = 1000;
-
-while(cash > 0){
-   var bet = Number(prompt('Enter your bet here:'));
+var cash = (1000);
+var bet = Number(prompt('Enter your bet here:'));
+while(cash < 0){
     if(bet > cash){
         bet = cash;
     }else
@@ -24,3 +23,18 @@ document.write (chanceTwo + ' ');
 var chanceThree = Math.floor(Math.random()* slots.length);
 document.write (chanceThree + ' ');
 
+if (chanceOne === chanceTwo && chanceTwo === chanceThree){
+    cash = bet * 3;
+    document.write ("You won! Your new balance is" + cash);
+}
+if (chanceOne === chanceTwo || chanceOne === chanceThree){
+    cash = bet *2;
+    document.write ("You won! Your new balance is" + cash);
+}
+if (chanceTwo === chanceOne || chanceTwo === chanceThree){
+    cash = bet*2;
+    document.write('You won! Your new balance is' + cash);
+}
+if (chanceOne !== chanceTwo || chanceOne !== chanceThree ){
+    document.write("You lost! Better luck next time!");
+}
